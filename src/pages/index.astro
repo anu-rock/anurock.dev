@@ -1,0 +1,222 @@
+---
+import {
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+	StickyTextImageSection,
+	CtaCardSection,
+	Container
+} from '@odyssey-theme/components';
+import Layout from '../layouts/Page.astro';
+import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
+import NewsletterForm from '../components/forms/NewsletterForm.astro';
+
+const seo = {
+	title: 'Hello, World | AnuRock.dev',
+};
+
+const youtubeUrl = 'https://youtube.googleapis.com/youtube/v3/playlistItems'
+	+ '?part=snippet%2CcontentDetails'
+	+ '&maxResults=3'
+	+ '&playlistId=UUxwOnEuz5kF6xR4Q9guxdMw'
+	+ `&key=${import.meta.env.YOUTUBE_API_KEY}`
+const response = await fetch(youtubeUrl);
+const data = await response.json();
+const videos = data.items;
+---
+
+<Layout seo={seo} >
+	<TextAndImageHero>
+		<div slot="text-container">
+			<h1>Pro developery stuff</h1>
+			<p>Software development productivity methods, tips, and thoughts from a generalist software engineer.</p>
+		</div>
+		<div slot="btns-container">
+			<Button href="/updates/posts/introducing-anurock-dev" materialIcon="chevron_right"
+				>Explained</Button
+			>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/home/anurag.png"
+				alt="Astro Odyssee"
+				id="home-hero-image"
+			/>
+		</picture>
+	</TextAndImageHero>
+
+	<CustomerQuoteSection
+		quoteText="What is better than building software? Building it the right way."
+		customerName="Anurag"
+	/>
+
+	<StickyTextImageSection>
+		<div slot="text-container">
+		  <h3><span style="color: red;">Who</span> am I?</h3>
+		  <p>
+			Hey there 👋 I'm Anurag Bhandari. I have been a <u>generalist software
+			engineer</u> for more than a decade. From services to startup to research
+			to consulting to product, I've been collecting and applying my
+			skills pretty diversely. I started my "enterprise" journey with .NET,
+			switched over to JavaScript, and am currently heavy in PHP.
+		  </p>
+		  <p>
+			Nowadays, engineering @ <a href="https://automattic.com">Automattic</a>.
+		  </p>
+		  <h3><span style="color: red;">What</span> makes me tick?</h3>
+			<p>
+			I subscribe to the <a href="https://anuragbhandari.com/coding-tech/jack-of-all-trades-1993/">
+			jack of all trades</a> philosophy. I strongly believe that to succeed
+			in the ever-changing tech landscape of today, a software developer <i>must</i>
+			constantly learn new skills as required at work. Gone are the days when
+			specializing in one technology or stack could propel you in a traditional
+			technical hierarchy.
+		  </p>
+		  <p>
+			  My mantra to learn <u>rapidly</u> and <u>effectively</u> is to <b>master</b>
+			  the 20% of a skill that will account for 80% of my application's codebase
+			  (see <a href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto Principle</a>).
+		  </p>
+		  <h3><span style="color: red;">Why</span> does it work?</h3>
+			<p>
+			By applying the <u>20% method</u> of learning, I can be productive in any skill in
+			less than a week. Time gained by focusing on fewer (but important) concepts allows
+			me to jump into development early. However, it's paramount that you learn that 20%
+			the right way*. Quick and deep-enough learning leads to robust code scales and
+			requires less refactoring later.
+		  </p>
+		  <p>
+			  *with BPST aspects - big-picture, performance, security, testing
+		  </p>
+		</div>
+		 <picture slot="image-container">
+		  <img
+			src="/assets/images/home/developer.jpg"
+			alt="Astro Odyssey"
+		  />
+		</picture>
+	  </StickyTextImageSection>
+
+	<Container>
+		<h2>Videos</h2>
+		{videos && (
+			<ThreeColumnTextSection>
+				<div slot="column-1-body">
+					<p>
+						<YouTubeEmbedSection url={`https://youtu.be/${videos[0].contentDetails.videoId}`} rounded />
+					</p>
+					<p>
+						{videos[0].snippet.title}
+					</p>
+				</div>
+				<Button
+					slot="column-1-cta"
+					materialIcon="play_arrow"
+					href={`https://youtu.be/${videos[0].contentDetails.videoId}`}
+					newTab={true}
+					>
+						Watch
+				</Button>
+				<div slot="column-2-body">
+					<p>
+						<YouTubeEmbedSection url={`https://youtu.be/${videos[1].contentDetails.videoId}`} rounded />
+					</p>
+					<p>
+						{videos[1].snippet.title}
+					</p>
+				</div>
+				<Button
+					slot="column-2-cta"
+					materialIcon="play_arrow"
+					href={`https://youtu.be/${videos[1].contentDetails.videoId}`}
+					newTab={true}
+					>
+						Watch
+				</Button>
+				<div slot="column-3-body">
+					<p>
+						<YouTubeEmbedSection url={`https://youtu.be/${videos[2].contentDetails.videoId}`} rounded />
+					</p>
+					<p>
+						{videos[2].snippet.title}
+					</p>
+				</div>
+				<Button
+					slot="column-3-cta"
+					materialIcon="play_arrow"
+					href={`https://youtu.be/${videos[2].contentDetails.videoId}`}
+					newTab={true}
+					>
+						Watch
+				</Button>
+			</ThreeColumnTextSection>
+		)}
+		{!videos && (
+			<ThreeColumnTextSection>
+				<div slot="column-1-body">
+					<h4>One day, we'll have here recent videos from my YouTube channel.</h4>
+				</div>
+				<Button
+					slot="column-1-cta"
+					materialIcon="play_arrow"
+					href="https://www.youtube.com/channel/UCxwOnEuz5kF6xR4Q9guxdMw"
+					newTab={true}
+					>
+						See channel
+				</Button>
+			</ThreeColumnTextSection>
+		)}
+	</Container>
+
+	<Container>
+		<h2>Podcasts</h2>
+		<ThreeColumnTextSection>
+			<div slot="column-1-body">
+				<iframe
+					style="border-radius:12px"
+					src="https://open.spotify.com/embed/show/2Egg7gR6XSCCmjn1k1cLQy?utm_source=generator"
+					width="100%"
+					height="232"
+					frameborder="0"
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+				</iframe>
+			</div>
+			<div slot="column-2-body">
+				<iframe
+					style="border-radius:12px"
+					src="https://open.spotify.com/embed/show/1Qva2W3CbXZ8Ulw5pOxQ5J?utm_source=generator"
+					width="100%"
+					height="232"
+					frameborder="0"
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+				</iframe>
+			</div>
+		</ThreeColumnTextSection>
+	</Container>
+
+  <CtaCardSection background="var(--theme-surface-2)" color="var(--theme-on-surface-2)">
+    <h1>Let's start a movement</h1>
+	<p>
+		Together we can make a small positive dent in the fabric of software development by disseminating
+		good practices and learning methods. Together we can make software better and more sustainable.
+	</p>
+	<p>
+		Every month I send helpful developer productivity tips and share my thoughts on other software engineering
+		topics.
+	</p>
+	<p>
+		You can add your email below to receive updates from me. I promise to keep it safe and not share
+		it with any person or company ever. It's a purely informational newsletter, without the corporate bullshit.
+	</p>
+	<h4>Sign up form opening soon.</h4>
+	<!-- <NewsletterForm /> -->
+  </CtaCardSection>
+
+</Layout>
+
+<style>
+	a {
+		color: #1556ac;
+	}
+</style>
