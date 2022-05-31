@@ -3,8 +3,6 @@ import { customElement, property } from 'lit/decorators.js';
 import {
 	classicThemeIcon,
 	darkThemeIcon,
-	earthThemeIcon,
-	blueThemeIcon,
 	orangeThemeIcon,
 } from './icons';
 
@@ -55,8 +53,8 @@ export class ThemeSwitcher extends LitElement {
 	// set the _doc element
 	private _doc = document.firstElementChild;
 
-	private _heroImage: HTMLImageElement =
-		document.querySelector('#home-hero-image');
+	private _logoImage: NodeListOf<HTMLImageElement> =
+		document.querySelectorAll('.odyssey-logo img');
 
 	@property({ type: String })
 	theme: string = 'default';
@@ -81,19 +79,13 @@ export class ThemeSwitcher extends LitElement {
 	private _setTheme(theme) {
 		this._doc.setAttribute('data-theme', theme);
 		if (theme === 'default') {
-			this._heroImage.src = '/assets/images/home/classic-hero.jpg';
+			this._logoImage.forEach( img => img.src = '/favicon.png');
 		}
 		if (theme === 'dark') {
-			this._heroImage.src = '/assets/images/home/dark-hero.jpg';
-		}
-		if (theme === 'earth') {
-			this._heroImage.src = '/assets/images/home/earth-hero.jpg';
-		}
-		if (theme === 'ocean') {
-			this._heroImage.src = '/assets/images/home/ocean-hero.jpg';
+			this._logoImage.forEach( img => img.src = '/favicon-white.png');
 		}
 		if (theme === 'sand') {
-			this._heroImage.src = '/assets/images/home/sand-hero.jpg';
+			this._logoImage.forEach( img => img.src = '/favicon.png');
 		}
 		localStorage.setItem('theme', theme);
 		this.theme = theme;
@@ -109,7 +101,6 @@ export class ThemeSwitcher extends LitElement {
 					>
 						${classicThemeIcon}
 					</button>
-					<p>Classic</p>
 				</div>
 				<div class="theme-select__container">
 					<button
@@ -118,25 +109,6 @@ export class ThemeSwitcher extends LitElement {
 					>
 						${darkThemeIcon}
 					</button>
-					<p>Dark</p>
-				</div>
-				<div class="theme-select__container">
-					<button
-						@click=${() => this._setTheme('earth')}
-						?active=${this.theme === 'earth'}
-					>
-						${earthThemeIcon}
-					</button>
-					<p>Earth</p>
-				</div>
-				<div class="theme-select__container">
-					<button
-						@click=${() => this._setTheme('ocean')}
-						?active=${this.theme === 'ocean'}
-					>
-						${blueThemeIcon}
-					</button>
-					<p>Ocean</p>
 				</div>
 				<div class="theme-select__container">
 					<button
@@ -145,7 +117,6 @@ export class ThemeSwitcher extends LitElement {
 					>
 						${orangeThemeIcon}
 					</button>
-					<p>Sand</p>
 				</div>
 			</div>
 		`;
