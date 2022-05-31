@@ -1,0 +1,31 @@
+---
+import { Container } from '@odyssey-theme/components';
+
+const {quoteText, quoteOptionalText, quoteSource} = Astro.props;
+---
+
+<section class="quote__section">
+  <Container narrow>
+    <blockquote>
+      "{quoteText} {quoteOptionalText && (<br>{quoteOptionalText})}"
+    </blockquote>
+    <p>&mdash; {quoteSource}</p>
+  </Container>
+</section>
+
+  <style>
+.quote__section {
+  margin: calc(var(--section-margin) * 2) auto;
+  padding: 3rem;
+  background-color: var(--theme-surface-1);
+  text-align: center;
+}
+.quote__section blockquote {
+  padding: 0;
+  border: none;
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.8;
+}
+</style>

@@ -1,7 +1,6 @@
 ---
 import {
 	Button,
-	CustomerQuoteSection,
 	ThreeColumnTextSection,
 	YouTubeEmbedSection,
 	StickyTextImageSection,
@@ -10,6 +9,7 @@ import {
 } from '@odyssey-theme/components';
 import Layout from '../layouts/Page.astro';
 import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
+import QuoteSection from '../components/sections/QuoteSection.astro';
 import NewsletterForm from '../components/forms/NewsletterForm.astro';
 
 const seo = {
@@ -46,9 +46,10 @@ const videos = data.items;
 		</picture>
 	</TextAndImageHero>
 
-	<CustomerQuoteSection
-		quoteText="What is better than building software? Building it the right way."
-		customerName="Anurag"
+	<QuoteSection
+		quoteText="What is better than building software?"
+		quoteOptionalText="Building it the right way."
+		quoteSource="Anurag"
 	/>
 
 	<StickyTextImageSection>
