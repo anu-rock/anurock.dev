@@ -28,7 +28,7 @@ If there's one thing I have learned over the years, it's this:
 
 **Software engineering is much bigger and harder than coding.**
 
-Wait! Aren't coding, programming, development, and software engineering one and the same? Sorry to disappoint you: they are not!
+Wait! Aren't coding, programming, development, and engineering one and the same? Sorry to disappoint you: they are not!
 
 Without reinventing the difference in my own words, I'll just reference a quote from the book [Software Engineering at Google](https://www.goodreads.com/en/book/show/48816586-software-engineering-at-google):
 
@@ -46,7 +46,7 @@ These are things that a shockingly vast majority of us do not care about, have n
 
 [AnuRock.dev](https://anurock.dev) is a small attempt to highlight the criticality of best practices, and make these seemingly "boring" aspects of software engineering compelling and fun to use in everyday coding.
 
-It will be my endeavour to share at least one insight that will help you in your journey to becoming a better software engineer. My medium of choice is video but I might occasionally take to audio podcasts and written articles.
+It will be my endeavour to share at least one insight per week that will help you in your journey to becoming a better software engineer. My medium of choice is video but I might occasionally take to audio podcasts and written articles.
 
 I'm a person who likes to experiment and read books. The insights I share are a mix of my battle-tested experiences and wisdom extracted from books.
 
