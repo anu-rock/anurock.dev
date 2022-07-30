@@ -24,8 +24,6 @@ const youtubeUrl = 'https://youtube.googleapis.com/youtube/v3/playlistItems'
 const response = await fetch(youtubeUrl);
 const data = await response.json();
 const videos = data.items;
-console.log(youtubeUrl);
-console.log(`Fetched ${videos.length} videos`);
 ---
 
 <Layout seo={seo} >
