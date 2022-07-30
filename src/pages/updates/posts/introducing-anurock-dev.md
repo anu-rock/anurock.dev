@@ -30,6 +30,8 @@ If there's one thing I have learned over the years, it's this:
 
 Wait! Aren't coding, programming, development, and engineering one and the same? Sorry to disappoint you: they are not!
 
+![good developer - perception vs. reality](/assets/images/blog/introducing-anurock-dev/good-developer-perception-vs-reality.png)
+
 Without reinventing the difference in my own words, I'll just reference a quote from the book [Software Engineering at Google](https://www.goodreads.com/en/book/show/48816586-software-engineering-at-google):
 
 > Software engineering is programming integrated over time. If you accept this distinction, it also becomes clear that we might need to delineate between programming tasks (development) and software engineering tasks (development, modificiation, maintenance).
