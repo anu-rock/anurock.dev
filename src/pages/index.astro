@@ -136,7 +136,22 @@ const videos = data.items;
 					>
 						Watch
 				</Button>
-				
+				<div slot="column-3-body">
+					<p>
+						<YouTubeEmbedSection url={`https://youtu.be/${videos[2].contentDetails.videoId}`} rounded />
+					</p>
+					<p>
+						{videos[2].snippet.title}
+					</p>
+				</div>
+				<Button
+					slot="column-3-cta"
+					materialIcon="play_arrow"
+					href={`https://youtu.be/${videos[2].contentDetails.videoId}`}
+					newTab={true}
+					>
+						Watch
+				</Button>
 			</ThreeColumnTextSection>
 		)}
 		{!videos && (
