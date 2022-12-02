@@ -14,7 +14,7 @@ No matter how much you practice, your craft does not seem to improve.
 
 In his best-selling book Atomic Habits, James Clear calls this state The Plateau of Latent Potential.
 
-![Plateau of Latent Potential](/assets/images/blog/pragmatic-programmer-book-review/featured.png)
+![Plateau of Latent Potential](/assets/images/blog/pragmatic-programmer-book-review/plateau-latent-potential.png)
 
 The Pragmatic Programmer is one book that can accelerate your coming out of the valley of disappointment and into the sublime world of first-rate programmers.
 
