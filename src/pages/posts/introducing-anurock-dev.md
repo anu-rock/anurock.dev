@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/Post.astro'
+layout: '../../layouts/Post.astro'
 title: Introducing AnuRock.dev
 description: Introducing AnuRock.dev
 publishDate: June 2, 2022

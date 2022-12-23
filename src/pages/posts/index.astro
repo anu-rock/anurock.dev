@@ -6,7 +6,7 @@ import {
 } from '@littlesticks/odyssey-theme-components';
 import Layout from '../../layouts/Page.astro';
 
-const posts = await Astro.glob('./posts/*.md').then(posts =>
+const posts = await Astro.glob('./*.md').then(posts =>
 	posts
 		.map(({ frontmatter, url }) => ({
 			title: frontmatter.title,
@@ -25,7 +25,7 @@ const posts = await Astro.glob('./posts/*.md').then(posts =>
 );
 
 const seo = {
-	title: 'Updates | AnuRock.dev',
+	title: 'Posts | AnuRock.dev',
 };
 ---
 

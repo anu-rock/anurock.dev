@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/Post.astro'
+layout: '../../layouts/Post.astro'
 title: Book Review - The Pragmatic Programmer
 description: The Pragmatic Programmer is one book that can accelerate your coming out of the valley of disappointment and into the sublime world of first-rate programmers.
 publishDate: August 16, 2022

@@ -1,5 +1,11 @@
 export const nav = [
 	{
+		title: 'Posts',
+		slug: '/posts',
+		materialIcon: 'pages',
+		iconColor: 'green',
+	},
+	{
 		title: 'Channel',
 		slug: 'https://www.youtube.com/channel/UCxwOnEuz5kF6xR4Q9guxdMw',
 		materialIcon: 'videocam',
@@ -10,12 +16,6 @@ export const nav = [
 		slug: 'https://anuragbhandari.com/podcasts/',
 		materialIcon: 'podcasts',
 		iconColor: 'purple',
-	},
-	{
-		title: 'Updates',
-		slug: '/updates',
-		materialIcon: 'update',
-		iconColor: 'green',
 	},
 	{
 		title: 'Blog',

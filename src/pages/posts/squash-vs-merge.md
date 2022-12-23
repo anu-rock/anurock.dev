@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/Post.astro'
+layout: '../../layouts/Post.astro'
 title: To merge or to squash on GitHub
 description: Using the "squash and merge" option offers some benefits over the "merge commit" option while closing your pull requests.
 publishDate: July 30, 2022

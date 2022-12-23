@@ -22,11 +22,11 @@ export const footerLists = [
 		items: [
 			{
 				title: 'What\'s anurock.dev?',
-				slug: '/updates/posts/introducing-anurock-dev',
+				slug: '/posts/introducing-anurock-dev',
 			},
 			{
-				title: 'Site updates',
-				slug: '/updates',
+				title: 'Posts',
+				slug: '/posts',
 			},
 		],
 	},
