@@ -7,7 +7,7 @@ export const nav = [
 	},
 	{
 		title: 'Channel',
-		slug: 'https://www.youtube.com/channel/UCxwOnEuz5kF6xR4Q9guxdMw',
+		slug: 'https://www.youtube.com/@anurock',
 		materialIcon: 'videocam',
 		iconColor: 'red',
 	},

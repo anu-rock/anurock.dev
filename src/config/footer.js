@@ -3,7 +3,7 @@ import { twitterIcon, youtubeIcon, githubIcon } from "../icons/icons";
 
 export const footerSocials = [
   {
-    url: 'https://www.youtube.com/channel/UCxwOnEuz5kF6xR4Q9guxdMw',
+    url: 'https://www.youtube.com/@anurock',
     icon: youtubeIcon,
   },
   {
