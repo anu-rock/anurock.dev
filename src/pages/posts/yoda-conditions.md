@@ -3,7 +3,7 @@ layout: '../../layouts/Post.astro'
 title: Yoda conditions
 description: Yoda notation is a style of writing conditions, especially equality checks, in reverse order.
 publishDate: January 6, 2022
-featuredImage: '/assets/images/blog/java-original-name/featured.png'
+featuredImage: '/assets/images/blog/yoda-conditions/featured.png'
 excerpt: Yoda notation is a style of writing conditions, especially equality checks, in reverse order.
 tags: ['Dev Bytes']
 ---
