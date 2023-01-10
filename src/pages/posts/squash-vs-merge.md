@@ -5,7 +5,7 @@ description: Using the "squash and merge" option offers some benefits over the "
 publishDate: July 30, 2022
 featuredImage: '/assets/images/blog/squash-vs-merge/featured.png'
 excerpt: 'Using the "squash and merge" option offers some benefits over the "merge commit" option while closing your pull requests.'
-tags: ['Dev Opinions']
+tags: ['Dev Productivity']
 ---
 
 It’s an endless debate.
