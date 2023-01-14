@@ -1,0 +1,36 @@
+---
+layout: '../../layouts/Post.astro'
+title: git was created by this famous person
+description: Did you know that git was created by a famous software engineer... as geek stories usually go... to solve his own problem?
+publishDate: January 6, 2023
+featuredImage: '/assets/images/blog/yoda-conditions/featured.png'
+excerpt: Did you know that git was created by a famous software engineer... as geek stories usually go... to solve his own problem?
+tags: ['Dev Bytes']
+---
+import YTEmbed from '../../components/YTEmbed.astro';
+
+*Prefer video format? [Watch it on YouTube.](https://youtu.be/rnNffgpKocI)*
+
+Did you know that git was created by a famous software engineer... as geek stories usually go... to solve his own problem?
+
+Today, it is the most widely used version control system. Before git, CVS and SVN dominated the source control management (aka SCM) space. Pretty much every commercial and open-source organization was using one of them to manage their source code. In just a few years that changed, and git became the leading player.
+
+What happened there? How did git suddenly dethrone existing SCMs? What made it superior to the others?
+
+To answer these questions, we have to go back in time to its origins.
+
+In the early days of Linux kernel development, source code was managed and distributed using tarballs and patches. As the size of the kernel grew, this approach was no longer scalable. The kernel maintainers needed a more sophisticated method for their large codebase.
+
+From 2002 to 2005, they used a proprietary tool, a **distributed** revision control system called BitKeeper. I know that sounds ironic, but as per Linus Torvalds there was no other commercial or open-source SCM at the time that was worthy for Linux.
+
+However, in 2005, the company behind BitKeeper ended its free-use plan and decided to charge teams, including the Linux developers, for the continued use of their product.
+
+This prompted Torvalds to build their own SCM tool. In typical Torvalds fashion, he quickly hacked out a tool in a few days and unveiled it to the team. In just over two months, git was ready to support the next kernel release v2.6.12.
+
+The distributed nature of BitKeeper heavily inspired this new tool. Torvalds laid out design goals for it, with performance and safety being the top criteria. Having used SVN in the past myself , I was dumbfounded by git’s unreal speed when I first used it.
+
+The term distributed means that a codebase doesn’t need to be stored on a central server to allow collaborative working. The complete codebase, including its full history, is replicated on every developer’s computer, making it possible to work completely offline. A peer-to-peer patch-sharing method can later keep each developer’s copy in sync. A central repository, then, is just a convenient way to sync patches and review code.
+
+As for what the name “git” means, there does not seem to be a clear answer. As per git’s wiki website, it could be a reference to Torvalds himself (since git is British English slang for an unpleasant person, which Torvalds considers himself), or it could be “a random three-letter combination that is pronounceable.”
+
+<YTEmbed videoId="rnNffgpKocI" />
