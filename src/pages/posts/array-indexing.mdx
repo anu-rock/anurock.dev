@@ -1,0 +1,30 @@
+---
+layout: '../../layouts/Post.astro'
+title: Why do arrays begin with index 0?
+description: While the use of zero-based numbering may seem counterintuitive at first, it has become a widely accepted convention in programming and has proven to be a helpful tool for simplifying code, avoiding errors, and improving readability.
+publishDate: March 17, 2023
+featuredImage: '/assets/images/blog/array-indexing/featured.png'
+excerpt: While the use of zero-based numbering may seem counterintuitive at first, it has become a widely accepted convention in programming and has proven to be a helpful tool for simplifying code, avoiding errors, and improving readability.
+tags: ['Dev Bytes']
+---
+import YTEmbed from '../../components/YTEmbed.astro';
+
+*Prefer video format? [Watch it on YouTube.](https://youtu.be/Bq21DGDKQoQ )*
+
+When I learned to program for the first time in high school, I was stumped by the fact that the first element of an array must be accessed via the zeroeth index. Since it was different from everything else in life where we start counting from one, it took me a while to get the hang of it. I’m sure that happened to most of you too. So, why on earth did we end up with zero-based indexing?
+
+One theory is that it was a decision made by the designers of the first programming languages, who were trying to optimize the use of memory. I have covered the history of the first programming languages in an earlier episode; be sure to check it out to learn more.
+
+Another theory is that it was a convention borrowed from mathematics, where indices often begin with 0. Regardless of the reason, the convention has become widely used and is now a fundamental aspect of programming.
+
+In his note titled “Why numbering should start at zero,” written in 1982, the famous Dutch
+computer scientist Edsger Dijkstra analyzed several ways to denote a sequence of natural numbers. He made the case for non-overlapping index ranges, which start at zero.
+
+In addition to the theories mentioned, there are other reasons for using zero-based numbering in programming. For example, it can simplify the implementation of certain algorithms, such as merge sort and binary search. This is because the use of 0 as the starting index simplifies the loop condition and avoids off-by-one errors. Additionally, it makes it easier to perform arithmetic operations on array indices.
+
+Another benefit of zero-based indexing is that it can make code more readable and easier to understand. This is because using a consistent indexing convention throughout a program can help to reduce confusion and make it easier to follow the logic of the code.
+
+Overall, while the use of zero-based numbering may seem counterintuitive at first, it has become a widely accepted convention in programming and has proven to be a helpful tool for simplifying
+code, avoiding errors, and improving readability.
+
+<YTEmbed videoId="Bq21DGDKQoQ " />
