@@ -1,0 +1,267 @@
+---
+layout: '../../layouts/Post.astro'
+title: Simplified: Prototypes in JavaScript
+description: Unlike a class, which is a template for creating objects, a prototype is an instantiated object with functions and properties that can be copied to other objects.
+publishDate: March 22, 2023
+featuredImage: '/assets/images/blog/prototypes-in-js/featured.png'
+excerpt: Unlike a class, which is a template for creating objects, a prototype is an instantiated object with functions and properties that can be copied to other objects.
+tags: ['Dev Simplified']
+---
+import YTEmbed from '../../components/YTEmbed.astro';
+
+*Prefer video format? [Watch it on YouTube.](https://youtu.be/ItxEa5chTq8)*
+
+Prototypes. This is one topic that JavaScript developers either fear using or don’t know about. So, we often end up with unnecessarily complex code, especially when parts of it are copied from StackOverflow or other similar sources. JavaScript is a multi-paradigm language, meaning that the same objective can be achieved through different coding styles. But having this flexibility does not always mean that you should keep avoiding prototypes as long as you can. Someday, prototypes *will* catch up with you and push you into a corner. When that happens, let’s be prepared to tackle it and turn the table in your favor.
+
+Writing object-oriented code has traditionally been done using classes, like in C++ and Java. In JavaScript, you write object-oriented code using prototypes. Unlike a class, which is a template for creating objects, a prototype is an instantiated object with functions and properties that can be copied to other objects. In this way, prototypes not only provide an OOP template but also aid in inheritance.
+
+Starting from ES6 (aka ES2015), you can use classes to write OOP code. But it’s just syntactic sugar. Underneath, the JS compiler will convert your classes into prototypal code.
+
+Let’s dive right into code and see prototypes in action.
+
+## [[Prototype]]
+
+Okay, I’ll start by creating an object that we want to use as a prototype.
+
+```javascript
+let person = {
+    name: 'John Doe',
+};
+```
+
+Now let’s create an object to represent a type of person called developer.
+
+```javascript
+let developer = {
+    __proto__: person,
+};
+```
+
+Since person is a prototype of developer, its name property should be available in developer too.
+
+```javascript
+console.log(developer.name); // Outputs "John Doe"
+```
+
+It’s useful to note that `__proto__` is a setter for a hidden property called `[[Prototype]]`. JavaScript won’t let us set `[[Prototype]]` directly, but let’s keep in mind that’s the actual name of the reference property.
+
+We can override person’s generic name with something more suitable to a developer.
+
+```javascript
+let developer = {
+    name: 'Joe Doe',
+    __proto__: person,
+};
+
+console.log(developer.name); // Outputs "Joe Doe"
+```
+
+Inheritance works for methods too.
+
+```javascript
+let person = {
+    name: 'John Doe',
+    speak: () => console.log('Hello'),
+};
+
+developer.speak(); // Outputs "Hello"
+```
+
+Let’s try and override speak.
+
+```javascript
+let developer = {
+    name: 'Joe Doe',
+    speak: () => console.log('Hello, world!'),
+    __proto__: person,
+};
+
+developer.speak(); // Outputs "Hello, world!"
+```
+
+We can make the prototype chain as long as we want.
+
+```javascript
+let anurag = {
+    name: 'Anurag Bhandari',
+    __proto__: developer,
+};
+
+console.log(anurag.name); // Outputs "Anurag Bhandari"
+anurag.speak(); // Outputs "Hello, world!"
+```
+
+## `this` in methods
+
+The value of `this` can be hard to infer in a sufficiently complex piece of code. JavaScript developers know this all too well. How do you think `this` behaves inside inherited methods? The short answer is: as expected. Let’s see for ourselves.
+
+Let’s create a method to return the name.
+
+```javascript
+let person = {
+    name: 'John Doe',
+    speak: () => console.log('Hello'),
+    tellName: function() { console.log(`My name is ${this.name}`); },
+};
+
+person.tellName(); // Outputs "My name is John Doe"
+```
+
+Now, the object developer should also have inherited the new method.
+
+```javascript
+developer.tellName(); // Outputs "My name is Joe Doe"
+```
+
+Let’s do something a bit more involved. We’ll create a new field ‘date of birth’ that we’ll access via its getter and setter methods.
+
+```javascript
+let person = {
+    name: 'John Doe',
+    speak: () => console.log('Hello'),
+    tellName: function() { console.log(`My name is ${this.name}`); },
+    dob: new Date('1900-01-01'),
+    set dateOfBirth(value) {
+        this.dob = new Date(value);
+    },
+    get dateOfBirth() {
+        return this.dob.toDateString();
+    }
+};
+```
+
+Now, the object anurag should also have inherited the new property and its accessor methods. Let’s try them out.
+
+```javascript
+anurag.dateOfBirth = '1950-07-05';
+```
+
+Not that I’m this old, but hopefully you get the idea.
+
+```javascript
+console.log(anurag.dateOfBirth); // Outputs "Wed 05 Jul 1950"
+```
+
+So, although we set a different date in person, the one returned above is the one for anurag. Even with inherited methods, `this` is always the object before the dot.
+
+I hope you also noticed that our last assignment did not override person’s setter method implementation. This is unlike how we overrode the speak method and is the expected behavior for setter methods.
+
+## Checking own vs. inherited properties
+
+Sometimes it’s useful to know which properties were defined in an object and which ones were inherited. We can check this using the built-in `hasOwnProperty` method that every object in JavaScript inherits from the master object called, well, `Object` with a capital O.
+
+Let’s define a brand-new property in our object anurag. We'll first comment out the unneeded code.
+
+```javascript
+// anurag.dateOfBirth = '1950-07-05';
+// console.log(anurag.dateOfBirth); // Outputs "Wed 05 Jul 1950"
+
+let anurag = {
+    name: 'Anurag Bhandari',
+    playsTennis: true,
+    __proto__: developer,
+};
+
+console.log(anurag.hasOwnProperty('playsTennis')); // Outputs true
+```
+
+As we’d expect, `hasOwnProperty` returns true for our new property. `anurag` defines the `name` and `speak` properties. Although technically they are overrides for inherited properties with the same name, we have defined them inside `anurag`. `hasOwnProperty` will return true for them.
+
+```javascript
+console.log(anurag.hasOwnProperty('name')); // Outputs true
+console.log(anurag.hasOwnProperty('speak')); // Outputs true
+```
+
+But it should be different for the properties tellName and dob.
+
+```javascript
+console.log(anurag.hasOwnProperty('tellName')); // Outputs false
+console.log(anurag.hasOwnProperty('dob')); // Outputs false
+```
+
+Here’s an interesting twist. Let's uncomment the dateOfBirth assignment.
+
+```javascript
+anurag.dateOfBirth = '1950-07-05';
+console.log(anurag.hasOwnProperty('dob')); // Outputs true
+```
+
+It now returns true because the `dateOfBirth` setter method has set the `dob` property on `anurag`.
+
+On a related note, when you want to iterate on an object’s properties, use the Object.keys method to get only own properties.
+
+```javascript
+console.log(Object.keys(anurag)); // Outputs ['dob', 'playsTennis', 'name', 'speak']
+```
+
+We can use the for…in loop for own plus inherited properties.
+
+## Built-in Prototypes
+
+We previously saw that every object in JavaScript inherits the hasOwnProperty method. Where did that method come from?
+
+When we initialize an object, JavaScript sets its prototype to `Object.prototype`. It is this built-in prototype that contains `hasOwnProperty` and `toString` and a few more methods.
+
+We can verify that anurag’s hasOwnProperty is coming from Object.prototype.
+
+```javascript
+console.log(anurag.__proto__.hasOwnProperty === Object.prototype.hasOwnProperty); // Outputs true
+```
+
+There are other built-in prototypes such as: `Array.prototype`, `Function.prototype`, `Date.prototype`.
+
+## Pollyfilling
+
+It is possible to modify built-in prototypes. You can add properties to be inherited by derived objects. You can also redefine existing properties. For instance, let’s say you want toString to behave differently from its default implementation.
+
+```javascript
+console.log(anurag.toString()); // Outputs [Object object]
+```
+
+Let's set `Object.prototype.toString` to a function that returns `name`;
+
+```javascript
+Object.prototype.toString = function() {
+    return this.name;
+};
+
+console.log(anurag.toString()); // Outputs "Anurag Bhandari"
+```
+
+Modifying built-in prototypes is not recommended as it may have unintended consequences.
+
+```javascript
+let rahul = {
+    age: 25,
+};
+
+console.log(rahul.toString()); // Outputs undefined
+```
+
+The only time you should be modifying built-in prototypes is for polyfilling. Polyfilling is a term for making a substitute for a method that exists in the JavaScript specification but is not yet supported by a particular JavaScript engine.
+
+For example, before 2015 the string method `startsWith` was supported in Firefox but not in Chrome. Back in the day, it was common to see polyfills for it such as this:
+
+```javascript
+if (!String.prototype.startsWith) {
+  console.log("define startsWith");
+  String.prototype.startsWith = function(search, pos) {
+    return this.substr(!pos || pos < 0 ? 0 : Number(pos), search.length) === search;
+  };
+}
+```
+
+## Summary
+
+Ok, we learned quite a bit about prototypes. Let’s summarize what we learned:
+
+- A prototype is an instantiated object with functions and properties that can be copied to other objects.
+- An object can specify its prototype via the `__proto__` property or `Object.setPrototypeOf` method.
+- We can override a method’s implementation from prototype in a derived object.
+- We can make the prototype chain as long as we want.
+- Even with inherited methods, `this` is always the object before the dot.
+- Use the `hasOwnProperty` method to check if a property was defined in an object or whether it was inherited.
+- JavaScript provides built-in prototypes for Object, Array, String, Function, and more.
+- You can modify built-in prototypes, but do that only for polyfilling.
+
+<YTEmbed videoId="ItxEa5chTq8  " />
