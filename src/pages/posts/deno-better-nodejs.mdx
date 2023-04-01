@@ -1,0 +1,34 @@
+---
+layout: '../../layouts/Post.astro'
+title: Deno, a better Node.js?
+description: Deno is a relatively new runtime for JavaScript. It was created by Ryan Dahl, the same person who also created Node.js.
+publishDate: April 1, 2023
+featuredImage: '/assets/images/blog/deno-better-nodejs/featured.png'
+excerpt: Deno is a relatively new runtime for JavaScript. It was created by Ryan Dahl, the same person who also created Node.js.
+tags: ['Dev Bytes']
+---
+import YTEmbed from '../../components/YTEmbed.astro';
+
+*Prefer video format? [Watch it on YouTube.](https://youtu.be/NMjIwGdVSwk)*
+
+Deno is a relatively new runtime for JavaScript. It was created by Ryan Dahl, the same person who also created Node.js. It is designed to address some of the issues and limitations of Node.js, such as security, module management, and compatibility with modern JavaScript syntax.
+
+Like Node, Deno is built on top of the V8 JavaScript engine. But unlike Node, it’s written in the Rust programming language rather than C/C++.
+
+Deno was first announced in 2018 at JSConf Europe where Ryan famously mocked the pitfalls of Node including the space hog that is the node_modules folder.
+
+One of the key features of Deno is its security model. Unlike Node, Deno does not allow access to the file system or network by default and requires explicit permission from the user or administrator to do so. This makes it more secure and less prone to vulnerabilities than Node.js.
+
+Deno also comes with its own module system, which does not rely on the Node.js package manager or CommonJS module format. Instead, Deno supports ES modules natively, which allows for a more modern and interoperable codebase.
+
+Another advantage of Deno is its ability to run TypeScript code natively, without the need for a transpiler or compiler.
+
+It also has built-in tools for testing and debugging, which can help developers save time and improve productivity. For instance, Deno includes a test runner, a debugger, and a code formatter, among other tools.
+
+Ironically, Deno recently added support for Node’s package.json. The move came as a surprise to many and was explained in detail on their official blog. Long story short, it’s designed to make it simpler to run and develop existing Node projects in Deno.
+
+Today, Deno the JS runtime is backed by Deno the company that has secured more than 25 million dollars worth of investments.
+
+Overall, Deno provides a modern and secure runtime for JavaScript that is more developer-friendly and easier to use than Node.js. If you're looking for a more secure and productive way to build JavaScript and TypeScript applications, then Deno is definitely worth checking out.
+
+<YTEmbed videoId="NMjIwGdVSwk" />
