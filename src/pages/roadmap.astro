@@ -1,0 +1,286 @@
+---
+import {
+	Container,
+	CtaCardSection,
+} from '@littlesticks/odyssey-theme-components';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Developer Roadmap | AnuRock.dev',
+};
+---
+
+<Layout {seo}>
+	<div class="post-header__container">
+		<h1>Developer Roadmap</h1>
+		<img
+			class="post-layout__img"
+			src="/assets/images/roadmap/girl-g893b1c905_1280.jpg"
+			alt="A girl reading a map while comfortably lying on the road"
+		/>
+	</div>
+	<Container>
+		<CtaCardSection
+			background="var(--theme-surface-2)"
+			color="var(--theme-on-surface-2)"
+		>
+			<p>
+				It's no longer enough to know how to code. Companies want to hire
+				developers with strong foundations and the right mindset.
+			</p>
+			<p>
+				In a world where anyone can learn to code, what does it take to be good
+				at it?
+			</p>
+			<p>
+				Being good does not always include the technical aspects of coding. You
+				need to also master, or at least be aware of, the non-technical, soft
+				side of coding.
+			</p>
+			<p>
+				Learn how to be an effective developer to unlock your potential, get
+				your desired job, and become more productive at work.
+			</p>
+		</CtaCardSection>
+		<h3>Why should you trust me?</h3>
+		<p>
+			I started as a junior developer at a global IT services firm, where I
+			worked my way up the ladder until I quit and joined an ed-tech startup. I
+			later joined a research organization and worked on emerging technologies.
+			A few years later, I came back to software consulting to hone my
+			engineering skills. Right now I work on a product used by millions of
+			customers, where I have learned to be code at scale and be more mindful
+			about my approach.
+		</p>
+		<p>
+			In my journey from a humble developer to an architect and manager, I have
+			amassed plenty of learning, mistakes, and lessons to know the difference
+			between a good and an average developer. And that's what I wish to explore
+			so that you safely use my experience to expedite your journey to being an
+			effective developer that companies want to hire.
+		</p>
+		<h3>Effective Developer Roadmap</h3>
+		<p>
+			A list of hard and soft skills you will need to become a good developer,
+			organized by where you are in the journey.
+		</p>
+		<p style="font-style:italic">
+			The roadmap is still evolving and may undergo heavy changes in the near
+			future.
+		</p>
+		<h3 style="text-align: center; margin-top: 3rem;">Aspiring → Hired</h3>
+		<section class="three-col-text__section grade-box__section">
+			<div class="three-col-text__column">
+				<div class="column-1-body">
+					<h4>Grade 1: Coding as a career</h4>
+					<ul>
+						<!-- Pros and cons of coding as a career; expectation vs. reality; creative problem solving; suitable personality types -->
+						<li>
+							<a href="/posts/is-coding-for-you">Is coding for you?</a>
+						</li>
+						<!-- Traditional path (leading to management); tech path (leading to architecture); track switches (to product mgt., consulting, etc.) -->
+						<li>
+							<a href="/posts/is-coding-for-you">Developer career paths</a>
+						</li>
+						<!-- Helps to be good at math, have some casual coding experience -->
+						<li>Prerequisites</li>
+						<!-- College vs. corporate; product vs. services -->
+						<li>Knowledge gaps</li>
+						<!-- Learning hrs/week; practice hrs/week -->
+						<li>Setting your goal</li>
+						<!-- Setting a routine & sticking to it; Atomic Habits principles -->
+						<li>Planning for success</li>
+					</ul>
+				</div>
+			</div>
+			<div class="three-col-text__column">
+				<div class="column-2-body">
+					<h4>Grade 2: Learning to code</h4>
+					<ul>
+						<li>The learning mindset</li>
+						<li>The power of structured learning</li>
+						<li>Learn from books</li>
+						<li>Learn from online courses</li>
+						<!-- Avoid -->
+						<li>Learn from offline institutes</li>
+						<!-- Learning with a friend; rubber duck learning -->
+						<li>Pair learning</li>
+						<!-- Start with backend -->
+						<li>Your first programming language</li>
+						<!-- Database; frontend -->
+						<li>Full-stack basics</li>
+					</ul>
+				</div>
+			</div>
+			<div class="three-col-text__column">
+				<div class="column-3-body">
+					<h4>Grade 3: Getting hired</h4>
+					<ul>
+						<li>Shortlisting companies</li>
+						<li>Building your resume</li>
+						<li>Applying for jobs</li>
+						<li>Preparing for interviews</li>
+						<li>Performance on D-day</li>
+						<li>Following up after an interview</li>
+						<!-- When to negotiate or accept; negotiation tactics -->
+						<li>Dealing with a job offer</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<h3 style="text-align: center;">Hired → Productive</h3>
+		<section class="three-col-text__section grade-box__section">
+			<div class="three-col-text__column">
+				<div class="column-1-body">
+					<h4>Grade 4: A strong foundation</h4>
+					<ul>
+						<li>Working in teams</li>
+						<li>Collaborating with others</li>
+						<!-- Expressing yourself clearly; email etiquette; status updates; 1:1s -->
+						<li>The art of articulation</li>
+						<!-- Prefer public channels for all work-related discussions; minimize DMs; writing often -->
+						<li>Open and public by default</li>
+						<!-- Dig before you ask; ask early when blocked; rubber ducking; keep stakeholders informed -->
+						<li>Asking for help</li>
+						<!-- Honesty is the best policy; adding a buffer; don't be a hero -->
+						<li>Estimating correctly</li>
+						<li>Get a guru</li>
+					</ul>
+				</div>
+			</div>
+			<div class="three-col-text__column">
+				<div class="column-2-body">
+					<h4>Grade 5: Writing good code</h4>
+					<ul>
+						<!-- Official docs; learning hour; take notes; learn by doing -->
+						<li>Effective learning</li>
+						<!-- Codebase; Google -->
+						<li>Get good at searching</li>
+						<!-- Stop blind copying; know the code you are copying; improve it if necessary; set an example for others -->
+						<li>Copying code from existing codebase</li>
+						<!-- Previous tips and: be extra cautious of bad code; copyright issues; trusted sources -->
+						<li>Copying code from online sources</li>
+						<!-- Use a trusted module or library for solved problems -->
+						<li>Don't reinvent the wheel</li>
+						<!-- Learn imp. shortcuts; useful plugins to add superpowers; generate repetitive code snippets -->
+						<li>Code editor as your assistant</li>
+						<!-- Use external modules with caution and care; include only relevant parts of the library -->
+						<li>Don't gloat your codebase</li>
+						<li>Be a documentation crusader</li>
+					</ul>
+				</div>
+			</div>
+			<div class="three-col-text__column">
+				<div class="column-3-body">
+					<h4>Grade 6: Leveling up</h4>
+					<ul>
+						<!-- Studying the architecture; how other modules integrate with yours -->
+						<li>Big picture thinking</li>
+						<li>Clean code</li>
+						<!-- Unit tests; e2e tests; using tests as your QA assistant -->
+						<li>Writing tests</li>
+						<li>Asking for code reviews</li>
+						<li>Reviewing code by others</li>
+						<!-- Physically; virtually; shadowing; dos and don’ts -->
+						<li>Pair programming</li>
+						<li>git best practices</li>
+						<!-- Hash out all possible scenarios on a notebook before writing a single word of code. -->
+						<li>Think before you code</li>
+						<!-- The importance of keeping security implications in mind. -->
+						<li>Security loopholes</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<h3 style="text-align: center;">Productive → Effective</h3>
+		<section class="three-col-text__section grade-box__section">
+			<div class="three-col-text__column">
+				<div class="column-1-body">
+					<h4>Grade 7: Increasing efficiency</h4>
+					<ul>
+						<li>Self-doubt and imposter syndrome</li>
+						<li>Trust your intuition</li>
+						<li>Deep work and dealing with interruptions</li>
+						<!-- Music; cluster meetings in less productive half -->
+						<li>Improving concentration</li>
+						<li>Keep a work journal</li>
+						<li>Dealing with feedback</li>
+						<li>Getting a promotion</li>
+					</ul>
+				</div>
+			</div>
+			<div class="three-col-text__column">
+				<div class="column-2-body">
+					<h4>Grade 8: Mastering your craft</h4>
+					<ul>
+						<!-- ChatGPT; GitHub Co-Pilot -->
+						<li>AI as your assistant</li>
+						<!-- See and write high-quality code; different perspectives and coding styles; learn and adapt processes for personal or work use -->
+						<li>Leveling up via open-source</li>
+						<li>Design patterns</li>
+					</ul>
+				</div>
+			</div>
+			<div class="three-col-text__column">
+				<div class="column-3-body">
+					<h4>Grade 9: Becoming a generalist</h4>
+					<ul>
+						<li>Coming soon...</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	a {
+		color: #1556ac;
+	}
+	.post-header__container {
+		max-width: var(--theme-blog-post-header-width);
+		margin: 1rem auto;
+		padding: var(--container-padding);
+	}
+	.post-layout__img {
+		margin: 0 auto 1rem auto;
+		border-radius: var(--theme-shape-radius);
+	}
+	.three-col-text__section {
+		--column-count: 3;
+		--column-width: calc(100% / var(--column-count));
+		margin: var(--section-margin) auto;
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		justify-content: space-evenly;
+	}
+	.three-col-text__column {
+		width: var(--column-width);
+		display: flex;
+		flex-direction: column;
+		justify-content: normal;
+		align-items: center;
+	}
+	.three-col-text__column ul {
+		list-style-type: none;
+	}
+	@media (max-width: 1200px) {
+		.three-col-text__section {
+			--column-count: 2;
+		}
+	}
+	@media (max-width: 768px) {
+		.three-col-text__section {
+			--column-count: 1;
+		}
+	}
+	.grade-box__section {
+		--section-bg: var(--theme-surface-1);
+		--section-color: var(--theme-on-surface-1);
+		padding: 2rem;
+		background-color: var(--section-bg);
+		color: var(--section-color);
+		border-radius: var(--theme-shape-radius);
+	}
+</style>
