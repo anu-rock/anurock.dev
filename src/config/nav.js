@@ -6,6 +6,12 @@ export const nav = [
 		iconColor: 'green',
 	},
 	{
+		title: 'Roadmap',
+		slug: '/roadmap',
+		materialIcon: 'route',
+		iconColor: 'black',
+	},
+	{
 		title: 'Channel',
 		slug: 'https://www.youtube.com/@anurock',
 		materialIcon: 'videocam',
