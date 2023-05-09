@@ -14,6 +14,7 @@ const posts = await Astro.glob('./*.md*').then(posts =>
 			authors: frontmatter.authors,
 			publishDate: parse(frontmatter.publishDate, 'MMMM d, yyyy', new Date()),
 			featuredImage: frontmatter.featuredImage,
+			showFeaturedImageOnPostPage: frontmatter.showFeaturedImageOnPostPage,
 			excerpt: frontmatter.excerpt,
 			href: url,
 		}))
@@ -33,7 +34,7 @@ const seo = {
 	<Container>
 		<section class="blog-posts-list__section">
 			<h2>Recent Posts</h2>
-			<BlogPostsList posts={posts} />
+			<BlogPostsList {posts} />
 		</section>
 	</Container>
 </Layout>
