@@ -9,7 +9,7 @@ export const nav = [
 		title: 'Roadmap',
 		slug: '/roadmap',
 		materialIcon: 'route',
-		iconColor: 'black',
+		iconColor: 'royalblue',
 	},
 	{
 		title: 'Channel',
